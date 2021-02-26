@@ -7,11 +7,20 @@
   "source": "https://github.com/bodgit/puppet-watchdog",
   "project_page": "https://github.com/bodgit/puppet-watchdog",
   "issues_url": "https://github.com/bodgit/puppet-watchdog/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=4.22.0 <7.0.0"
+    },
+    {
+      "name": "herculesteam/augeasproviders_sysctl",
+      "version_requirement": ">=2.0.0 <3.0.0"
+    }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -19,7 +28,6 @@
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -27,7 +35,6 @@
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -35,7 +42,6 @@
     {
       "operatingsystem": "Scientific",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -43,42 +49,22 @@
     {
       "operatingsystem": "OpenBSD",
       "operatingsystemrelease": [
-        "4.9",
-        "5.0",
-        "5.1",
-        "5.2",
-        "5.3",
-        "5.4",
-        "5.5",
-        "5.6",
-        "5.7",
-        "5.8",
-        "5.9"
+        "6.7",
+        "6.8"
       ]
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">=3.0.0 <5.0.0"
-    },
-    {
-      "name": "pe",
-      "version_requirement": ">=3.7.0 <2015.4.0"
+      "version_requirement": ">=5.5.10 <8.0.0"
     }
   ],
   "tags": [
     "tco",
     "watchdog"
   ],
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">=4.6.0 <5.0.0"
-    },
-    {
-      "name": "herculesteam/augeasproviders_sysctl",
-      "version_requirement": ">=2.0.0 <3.0.0"
-    }
-  ]
+  "pdk-version": "2.0.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#2.0.0",
+  "template-ref": "tags/2.0.0-0-ge838f1d"
 }

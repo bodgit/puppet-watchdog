@@ -1,3 +1,13 @@
 fixtures:
   symlinks:
     watchdog: "#{source_dir}"
+  forge_modules:
+    augeasproviders_core:
+      repo: "herculesteam/augeasproviders_core"
+      ref: "2.6.0"
+    augeasproviders_sysctl:
+      repo: "herculesteam/augeasproviders_sysctl"
+      ref: "2.6.0"
+    stdlib:
+      repo: "puppetlabs/stdlib"
+      ref: "6.6.0"

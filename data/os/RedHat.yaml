@@ -1,0 +1,3 @@
+---
+watchdog::package_name: 'watchdog'
+watchdog::service_name: 'watchdog'

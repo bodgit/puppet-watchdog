@@ -1,0 +1,6 @@
+---
+watchdog::manage_package: true
+watchdog::period: 60
+watchdog::service_enable: true
+watchdog::service_ensure: 'running'
+watchdog::service_manage: true
