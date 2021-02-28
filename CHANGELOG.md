@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.0.0](https://github.com/bodgit/puppet-watchdog/tree/v2.0.0) (2021-02-28)
+
+[Full Changelog](https://github.com/bodgit/puppet-watchdog/compare/v1.1.0...v2.0.0)
+
+### Changed
+
+- Refactor to use PDK [\#5](https://github.com/bodgit/puppet-watchdog/pull/5) ([bodgit](https://github.com/bodgit))
+
 ## [v1.1.0](https://github.com/bodgit/puppet-watchdog/tree/v1.1.0) (2016-10-02)
 
 [Full Changelog](https://github.com/bodgit/puppet-watchdog/compare/0358f0a93b142c0f4b457b8c16c7815c34894367...v1.1.0)
