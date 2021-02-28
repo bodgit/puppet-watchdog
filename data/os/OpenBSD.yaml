@@ -1,0 +1,4 @@
+---
+watchdog::manage_package: false
+watchdog::package_name: ~
+watchdog::service_name: 'watchdogd'

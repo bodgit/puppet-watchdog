@@ -1,21 +1,21 @@
-#
+# @!visibility private
 class watchdog::config {
 
-  $period = $::watchdog::period
+  $period = $watchdog::period
   $tickle = floor($period / 3)
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     'RedHat': {
       file { '/etc/watchdog.conf':
         ensure  => file,
         owner   => 0,
         group   => 0,
         mode    => '0644',
-        content => template('watchdog/watchdog.conf.erb'),
+        content => template("${module_name}/watchdog.conf.erb"),
       }
     }
     'OpenBSD': {
-      if $::watchdog::service_manage {
+      if $watchdog::service_manage {
         sysctl { 'kern.watchdog.period':
           ensure => absent,
         }
@@ -34,6 +34,8 @@ class watchdog::config {
         }
       }
     }
-    default: {}
+    default: {
+      # noop
+    }
   }
 }
