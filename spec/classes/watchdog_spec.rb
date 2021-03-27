@@ -22,7 +22,7 @@ describe 'watchdog' do
         'value'  => 0,
       )
         }
-      when 'RedHat'
+      when 'RedHat', 'Debian'
         it { is_expected.to contain_file('/etc/watchdog.conf') }
         it { is_expected.to contain_package('watchdog') }
         it { is_expected.to contain_service('watchdog') }

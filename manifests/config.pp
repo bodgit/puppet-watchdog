@@ -5,7 +5,7 @@ class watchdog::config {
   $tickle = floor($period / 3)
 
   case $facts['os']['family'] {
-    'RedHat': {
+    'RedHat', 'Debian': {
       file { '/etc/watchdog.conf':
         ensure  => file,
         owner   => 0,
