@@ -6,6 +6,11 @@ describe 'watchdog' do
       let(:facts) do
         facts
       end
+      let(:params) do
+        {
+          :interfaces => ['eth0']
+        }
+      end
 
       it { is_expected.to contain_class('watchdog') }
       it { is_expected.to contain_class('watchdog::config') }
@@ -26,6 +31,7 @@ describe 'watchdog' do
         it { is_expected.to contain_file('/etc/watchdog.conf')
           .with_content(/.*watchdog-timeout\s+=\s+60.*/)
           .with_content(/.*interval\s+=\s+20.*/)
+          .with_content(/.*interface\s+=\s+eth0/)
         }
         it { is_expected.to contain_package('watchdog') }
         it { is_expected.to contain_service('watchdog') }

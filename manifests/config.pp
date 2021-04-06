@@ -12,8 +12,9 @@ class watchdog::config {
         group   => 0,
         mode    => '0644',
         content => epp('watchdog/watchdog.conf.epp', {
-          'period' => $period,
-          'tickle' => $tickle,
+          'period'     => $period,
+          'tickle'     => $tickle,
+          'interfaces' => $watchdog::interfaces,
         }),
       }
     }

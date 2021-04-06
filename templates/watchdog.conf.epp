@@ -1,6 +1,9 @@
-<%- | Integer $period, Integer $tickle | -%>
+<%- | Integer $period, Integer $tickle, Array[String] $interfaces = [] | -%>
 watchdog-device		= /dev/watchdog
 watchdog-timeout	= <%= $period %>
 interval		= <%= $tickle %>
 realtime		= yes
 priority		= 1
+<% $interfaces.each |$iface| { -%>
+interface = <%= $iface %>
+<% } -%>
