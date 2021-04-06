@@ -12,6 +12,7 @@
 # @param service_name Name of the service.
 # @param interfaces Array of network interfaces to watch, empty by default.
 # @param pings Array of network addresess to ping, empty by default.
+# @param keep_alive_enabled Whether to enable keep alive functionality
 class watchdog (
   Boolean                              $manage_package,
   Optional[String]                     $package_name,
@@ -22,6 +23,7 @@ class watchdog (
   String                               $service_name,
   Array[String]                        $interfaces     = [],
   Array[Stdlib::IP::Address::NoSubnet] $pings          = [],
+  Boolean                              $keep_alive_enabled = true,
 ) {
 
   contain watchdog::install
