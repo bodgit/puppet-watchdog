@@ -23,7 +23,10 @@ describe 'watchdog' do
       )
         }
       when 'RedHat'
-        it { is_expected.to contain_file('/etc/watchdog.conf') }
+        it { is_expected.to contain_file('/etc/watchdog.conf')
+          .with_content(/.*watchdog-timeout\s+=\s+60.*/)
+          .with_content(/.*interval\s+=\s+20.*/)
+        }
         it { is_expected.to contain_package('watchdog') }
         it { is_expected.to contain_service('watchdog') }
       end
