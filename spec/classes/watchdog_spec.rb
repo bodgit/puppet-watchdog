@@ -8,7 +8,8 @@ describe 'watchdog' do
       end
       let(:params) do
         {
-          :interfaces => ['eth0']
+          :interfaces => ['eth0'],
+          :pings => ['192.168.0.1']
         }
       end
 
@@ -32,6 +33,7 @@ describe 'watchdog' do
           .with_content(/.*watchdog-timeout\s+=\s+60.*/)
           .with_content(/.*interval\s+=\s+20.*/)
           .with_content(/.*interface\s+=\s+eth0/)
+          .with_content(/.*ping\s+=\s+192\.168\.0\.1/)
         }
         it { is_expected.to contain_package('watchdog') }
         it { is_expected.to contain_service('watchdog') }

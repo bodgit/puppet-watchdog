@@ -15,6 +15,7 @@ class watchdog::config {
           'period'     => $period,
           'tickle'     => $tickle,
           'interfaces' => $watchdog::interfaces,
+          'pings'      => $watchdog::pings,
         }),
       }
     }
