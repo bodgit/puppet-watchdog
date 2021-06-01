@@ -1,4 +1,5 @@
-<%- | Integer $period, Integer $tickle, Array[String] $interfaces = [], Array[String] $pings = [] | -%>
+<%- | Integer $period, Integer $tickle, Array[String] $interfaces = [], Array[Stdlib::IP::Address::NoSubnet] $pings = [] | -%>
+# !!! Managed by Puppet !!!
 watchdog-device		= /dev/watchdog
 watchdog-timeout	= <%= $period %>
 interval		= <%= $tickle %>

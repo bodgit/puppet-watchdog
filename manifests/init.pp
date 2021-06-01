@@ -13,15 +13,15 @@
 # @param interfaces Array of network interfaces to watch, empty by default.
 # @param pings Array of network addresess to ping, empty by default.
 class watchdog (
-  Boolean                 $manage_package,
-  Optional[String]        $package_name,
-  Integer[0]              $period,
-  Boolean                 $service_enable,
-  Stdlib::Ensure::Service $service_ensure,
-  Boolean                 $service_manage,
-  String                  $service_name,
-  Array[String]           $interfaces = [],
-  Array[String]           $pings = [],
+  Boolean                              $manage_package,
+  Optional[String]                     $package_name,
+  Integer[0]                           $period,
+  Boolean                              $service_enable,
+  Stdlib::Ensure::Service              $service_ensure,
+  Boolean                              $service_manage,
+  String                               $service_name,
+  Array[String]                        $interfaces     = [],
+  Array[Stdlib::IP::Address::NoSubnet] $pings          = [],
 ) {
 
   contain watchdog::install

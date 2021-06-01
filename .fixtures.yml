@@ -10,4 +10,4 @@ fixtures:
       ref: "2.6.0"
     stdlib:
       repo: "puppetlabs/stdlib"
-      ref: "6.6.0"
+      ref: "7.1.0"
