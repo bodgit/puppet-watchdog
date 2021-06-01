@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.1.0](https://github.com/bodgit/puppet-watchdog/tree/v2.1.0) (2021-06-01)
+
+[Full Changelog](https://github.com/bodgit/puppet-watchdog/compare/v2.0.0...v2.1.0)
+
+### Added
+
+- Introduce some more configuration [\#8](https://github.com/bodgit/puppet-watchdog/pull/8) ([jimirocks](https://github.com/jimirocks))
+- Introduce debian support [\#7](https://github.com/bodgit/puppet-watchdog/pull/7) ([jimirocks](https://github.com/jimirocks))
+
 ## [v2.0.0](https://github.com/bodgit/puppet-watchdog/tree/v2.0.0) (2021-02-28)
 
 [Full Changelog](https://github.com/bodgit/puppet-watchdog/compare/v1.1.0...v2.0.0)
