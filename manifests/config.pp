@@ -11,7 +11,12 @@ class watchdog::config {
         owner   => 0,
         group   => 0,
         mode    => '0644',
-        content => template("${module_name}/watchdog.conf.erb"),
+        content => epp('watchdog/watchdog.conf.epp', {
+          'period'     => $period,
+          'tickle'     => $tickle,
+          'interfaces' => $watchdog::interfaces,
+          'pings'      => $watchdog::pings,
+        }),
       }
     }
     'OpenBSD': {

@@ -10,6 +10,8 @@
 # @param service_ensure
 # @param service_manage Whether to manage the service.
 # @param service_name Name of the service.
+# @param interfaces Array of network interfaces to watch, empty by default.
+# @param pings Array of network addresess to ping, empty by default.
 class watchdog (
   Boolean                 $manage_package,
   Optional[String]        $package_name,
@@ -18,6 +20,8 @@ class watchdog (
   Stdlib::Ensure::Service $service_ensure,
   Boolean                 $service_manage,
   String                  $service_name,
+  Array[String]           $interfaces = [],
+  Array[String]           $pings = [],
 ) {
 
   contain watchdog::install

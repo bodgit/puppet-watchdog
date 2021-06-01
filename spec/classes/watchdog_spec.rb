@@ -7,6 +7,13 @@ describe 'watchdog' do
         facts
       end
 
+      let(:params) do
+        {
+          interfaces: ['eth0'],
+          pings:      ['192.168.0.1']
+        }
+      end
+
       it { is_expected.to contain_class('watchdog') }
       it { is_expected.to contain_class('watchdog::config') }
       it { is_expected.to contain_class('watchdog::install') }
@@ -18,12 +25,18 @@ describe 'watchdog' do
         it { is_expected.to contain_sysctl('kern.watchdog.period').with_ensure('absent') }
         it {
           is_expected.to contain_sysctl('kern.watchdog.auto').with(
-        'ensure' => 'present',
-        'value'  => 0,
-      )
+            'ensure' => 'present',
+            'value'  => 0,
+          )
         }
       when 'RedHat', 'Debian'
-        it { is_expected.to contain_file('/etc/watchdog.conf') }
+        it {
+          is_expected.to contain_file('/etc/watchdog.conf')
+            .with_content(%r{.*watchdog-timeout\s+=\s+60.*})
+            .with_content(%r{.*interval\s+=\s+20.*})
+            .with_content(%r{.*interface\s+=\s+eth0})
+            .with_content(%r{.*ping\s+=\s+192\.168\.0\.1})
+        }
         it { is_expected.to contain_package('watchdog') }
         it { is_expected.to contain_service('watchdog') }
       end
