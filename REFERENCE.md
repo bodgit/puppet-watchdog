@@ -36,6 +36,8 @@ The following parameters are available in the `watchdog` class:
 * [`service_ensure`](#service_ensure)
 * [`service_manage`](#service_manage)
 * [`service_name`](#service_name)
+* [`interfaces`](#interfaces)
+* [`pings`](#pings)
 
 ##### <a name="manage_package"></a>`manage_package`
 
@@ -78,6 +80,22 @@ Whether to manage the service.
 Data type: `String`
 
 Name of the service.
+
+##### <a name="interfaces"></a>`interfaces`
+
+Data type: `Array[String]`
+
+Array of network interfaces to watch, empty by default.
+
+Default value: `[]`
+
+##### <a name="pings"></a>`pings`
+
+Data type: `Array[Stdlib::IP::Address::NoSubnet]`
+
+Array of network addresess to ping, empty by default.
+
+Default value: `[]`
 
 ### <a name="watchdogconfig"></a>`watchdog::config`
 
