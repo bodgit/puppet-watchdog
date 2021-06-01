@@ -189,6 +189,42 @@
       
     </li>
   
+    <li>
+      
+        <span class='name'>interfaces</span>
+      
+      
+        <span class='type'>(<tt>Array[String]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of network interfaces to watch, empty by default.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>pings</span>
+      
+      
+        <span class='type'>(<tt>Array[Stdlib::IP::Address::NoSubnet]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of network addresess to ping, empty by default.</p>
+</div>
+      
+    </li>
+  
 </ul>
 
 
@@ -200,8 +236,6 @@
         <pre class="lines">
 
 
-13
-14
 15
 16
 17
@@ -216,19 +250,25 @@
 26
 27
 28
-29</pre>
+29
+30
+31
+32
+33</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 13</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 15</span>
 
 class watchdog (
-  Boolean                 $manage_package,
-  Optional[String]        $package_name,
-  Integer[0]              $period,
-  Boolean                 $service_enable,
-  Stdlib::Ensure::Service $service_ensure,
-  Boolean                 $service_manage,
-  String                  $service_name,
+  Boolean                              $manage_package,
+  Optional[String]                     $package_name,
+  Integer[0]                           $period,
+  Boolean                              $service_enable,
+  Stdlib::Ensure::Service              $service_ensure,
+  Boolean                              $service_manage,
+  String                               $service_name,
+  Array[String]                        $interfaces     = [],
+  Array[Stdlib::IP::Address::NoSubnet] $pings          = [],
 ) {
 
   contain watchdog::install
