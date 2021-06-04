@@ -1,6 +1,6 @@
 # watchdog
 
-[![Build Status](https://travis-ci.org/bodgit/puppet-watchdog.svg?branch=master)](https://travis-ci.org/bodgit/puppet-watchdog)
+[![Build Status](https://travis-ci.com/bodgit/puppet-watchdog.svg?branch=main)](https://travis-ci.com/bodgit/puppet-watchdog)
 [![Codecov](https://img.shields.io/codecov/c/github/bodgit/puppet-watchdog)](https://codecov.io/gh/bodgit/puppet-watchdog)
 [![Puppet Forge version](http://img.shields.io/puppetforge/v/bodgit/watchdog)](https://forge.puppetlabs.com/bodgit/watchdog)
 [![Puppet Forge downloads](https://img.shields.io/puppetforge/dt/bodgit/watchdog)](https://forge.puppetlabs.com/bodgit/watchdog)
@@ -60,7 +60,7 @@ The reference documentation is generated with
 [puppet-strings](https://github.com/puppetlabs/puppet-strings) and the latest
 version of the documentation is hosted at
 [https://bodgit.github.io/puppet-watchdog/](https://bodgit.github.io/puppet-watchdog/)
-and available also in the [REFERENCE.md](https://github.com/bodgit/puppet-watchdog/blob/master/REFERENCE.md).
+and available also in the [REFERENCE.md](https://github.com/bodgit/puppet-watchdog/blob/main/REFERENCE.md).
 
 ## Limitations
 
