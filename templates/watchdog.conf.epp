@@ -1,6 +1,8 @@
-<%- | Integer $period, Integer $tickle, Array[String] $interfaces = [], Array[Stdlib::IP::Address::NoSubnet] $pings = [] | -%>
+<%- | Boolean $keep_alive = true, Integer $period, Integer $tickle, Array[String] $interfaces = [], Array[Stdlib::IP::Address::NoSubnet] $pings = [] | -%>
 # !!! Managed by Puppet !!!
+<% if $keep_alive { -%>
 watchdog-device		= /dev/watchdog
+<% } -%>
 watchdog-timeout	= <%= $period %>
 interval		= <%= $tickle %>
 realtime		= yes
